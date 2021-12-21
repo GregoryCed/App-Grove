@@ -1,0 +1,90 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="primary" title=""></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="bgCriarTarefas">
+  </div>
+
+  
+  <div class="divCriar">
+    <div class="pt">
+      <h1>{{ tarefa.titulo }}</h1>
+    </div>
+    
+    <div>
+      <h2>{{ tarefa.prazo | date: 'longDate'}}</h2>
+    </div>
+    
+    <div class="pt">
+      <h3>{{ tarefa.descricao }}</h3>
+    </div>
+    
+    <div class="pt">
+      <button class="tags">Adicionar tags</button>
+    </div>
+
+    <div class="pt">
+      <ion-button color="primary" (click)="deleteTarefa()" (click)="tarefas()" (click)="alerta()">Finalizar tarefa</ion-button>
+    </div>
+
+  </div>
+  <!--botão flutuante-->
+  <div class="btnFab">
+    <ion-fab horizontal="end">
+      <ion-fab-button>
+        <img src="../../../assets/fab.svg">
+      </ion-fab-button>
+      <ion-fab-list side="start">
+        <ion-grid class="fabGrid">
+          <ion-row>
+            <ion-col class="fabCol" size="12">
+              <ion-fab-button size="small" color="primary" class="fab-txt">
+                Editar tarefa?
+              </ion-fab-button>
+            </ion-col>
+          </ion-row>
+          <ion-row class="rowCheck">      
+            <ion-col class="fabCol" size="6">
+              <ion-fab-button button [routerLink]="['/editar-tarefa', tarefaId]" size="small" color="primary">
+              <ion-icon name="checkmark-outline"></ion-icon>
+            </ion-fab-button>
+            </ion-col>
+            <ion-col class="fabCol" size="6">
+              <ion-fab-button size="small" color="danger">
+                <ion-icon name="close-outline"></ion-icon>
+              </ion-fab-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-fab-list>
+    </ion-fab>
+  </div> 
+
+  <!--opições de navegação-->
+  <div class="tab">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="4">
+          <ion-tab-button (click)="tarefas()">
+            <img src="../../assets/tarefas.svg">
+          </ion-tab-button>
+        </ion-col>
+        <ion-col size="4">
+          <ion-tab-button (click)="home()">
+            <img src="../../assets/home.svg">
+          </ion-tab-button>
+        </ion-col>
+        <ion-col size="4">
+          <ion-tab-button>
+            <img src="../../assets/account_circle_24px.svg">
+          </ion-tab-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

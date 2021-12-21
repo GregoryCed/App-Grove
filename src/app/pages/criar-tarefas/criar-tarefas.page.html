@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button title=""></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="bgCriarTarefas">
+    <div class="icon-trocarImg">
+      <img src="../../../assets/icon-trocarImg.png">
+    </div>
+  </div>
+
+  <div class="divCriar">
+    <ion-item>
+      <ion-input placeholder="Adicionar título" [(ngModel)]="tarefa.titulo" ></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label>Adicionar Prazo</ion-label>
+      <ion-datetime
+        [dayShortNames]="customDayShortNames"
+        displayFormat="DD de MMM"
+        monthShortNames="janeiro, fevereiro, março, abril, maio, junho, julho, agosto, setembro, outubro, novembro, desembro"
+        [(ngModel)]="tarefa.prazo"></ion-datetime>
+    </ion-item>
+
+    <ion-list>
+      <ion-radio-group value="repetir">
+        <ion-item>
+          <ion-label>Repetir Diariamente</ion-label>
+          <ion-radio slot="start" value="diariamente"></ion-radio>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Repetir Semanalmente</ion-label>
+          <ion-radio slot="start" value="semanalmente"></ion-radio>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Repetir Mensalmente</ion-label>
+          <ion-radio slot="start" value="mensalmente"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+
+    <div class="pt">
+      <div class="descricao">
+        <ion-input placeholder="Adicionar descrição" [(ngModel)]="tarefa.descricao"></ion-input>
+      </div>
+    </div>
+    
+    <div class="pt">
+      <button class="multi-tarefa">Adicionar Multi-tarefa</button>
+      <a><img src="../../../assets/+.svg"></a>
+    </div>
+    <div class="pt">
+      <button class="tags">Adicionar tags</button>
+      <a><img src="../../../assets/+.svg"></a>
+    </div>
+    
+    <div class="pt">
+      <ion-button (click)="saveTarefa()" (click)="tarefas()" color="primary">Criar</ion-button>
+    </div>
+  </div>
+
+  <div class="espaco"></div>
+
+  <!--opições de navegação-->
+  <div class="tab">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="4">
+          <ion-tab-button (click)="tarefas()">
+            <img src="../../assets/tarefas.svg">
+          </ion-tab-button>
+        </ion-col>
+        <ion-col size="4">
+          <ion-tab-button (click)="home()">
+            <img src="../../assets/home.svg">
+          </ion-tab-button>
+        </ion-col>
+        <ion-col size="4">
+          <ion-tab-button>
+            <img src="../../assets/account_circle_24px.svg">
+          </ion-tab-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+    
+</ion-content>
+
+

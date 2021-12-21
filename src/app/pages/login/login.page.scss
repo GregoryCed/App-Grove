@@ -1,0 +1,34 @@
+.btnsLogin{
+    padding-top: 20px;
+}
+
+.pr{
+    padding-right: 7px;
+}
+
+ion-button[color="primary"]{
+    text-transform: initial;
+    width: 70%;
+}
+
+ion-button[fill="outline"]{
+    text-transform: initial;
+    font-size: 8px;
+    color: black;
+}
+
+ion-icon[name="logo-google"]{
+    width: 13px;
+}
+
+div[class="flex-center"]{
+    text-align: center;
+}
+
+ion-card-title{
+    font-size: 20;
+}
+
+ion-card{
+    box-shadow: none;
+}

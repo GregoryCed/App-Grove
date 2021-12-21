@@ -1,0 +1,98 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="primary" title=""></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="bgCriarTarefas">
+    <div class="icon-trocarImg">
+      <img src="../../../assets/icon-trocarImgBranco.png">
+    </div>
+  </div>
+
+  
+  <div class="divCriar">
+    <div class="container">
+      <ion-input type="text" [(ngModel)]="tarefa.titulo" placeholder="titulo"></ion-input>
+      <a><img src="../../../assets/icon-editar.svg" alt=""></a>
+    </div>
+    
+    <ion-item>
+      <ion-label>Alterar Prazo</ion-label>
+      <ion-datetime value="05-23"
+        [dayShortNames]="customDayShortNames"
+        displayFormat="DD de MMM"
+        monthShortNames="janeiro, fevereiro, março, abril, maio, junho, julho, agosto, setembro, outubro, novembro, desembro"
+        [(ngModel)]="tarefa.prazo"></ion-datetime>
+    </ion-item>
+
+    <ion-list>
+      <ion-radio-group value="repetir">
+        <ion-item>
+          <ion-label>Repetir Diariamente</ion-label>
+          <ion-radio slot="start" value="diariamente"></ion-radio>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Repetir Semanalmente</ion-label>
+          <ion-radio slot="start" value="semanalmente"></ion-radio>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Repetir Mensalmente</ion-label>
+          <ion-radio slot="start" value="mensalmente"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+
+    <div class="container pt">
+      <div class="pt">
+        <div class="descricao">
+          <ion-input type="text" [(ngModel)]="tarefa.descricao" placeholder="descricao"></ion-input>
+        </div>
+      </div>
+      <a><img src="../../../assets/icon-editar.svg" alt=""></a>
+    </div>
+    
+    <div class="pt container">
+      <button class="btn-pessoal">Pessoal</button>
+      <div class="pl">
+        <button class="tags">Adicionar tags</button>
+        <a><img src="../../../assets/+.svg"></a>
+      </div>
+    </div>
+
+    <div class="pt">
+      <ion-button (click)="saveTarefa()" color="primary">Finalizar</ion-button>
+    </div>
+
+  </div>
+  
+  <div class="espaco"></div>
+
+  <!--opições de navegação-->
+  <div class="tab">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="4">
+          <ion-tab-button (click)="tarefas()">
+            <img src="../../assets/tarefas.svg">
+          </ion-tab-button>
+        </ion-col>
+        <ion-col size="4">
+          <ion-tab-button (click)="home()">
+            <img src="../../assets/home.svg">
+          </ion-tab-button>
+        </ion-col>
+        <ion-col size="4">
+          <ion-tab-button>
+            <img src="../../assets/account_circle_24px.svg">
+          </ion-tab-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

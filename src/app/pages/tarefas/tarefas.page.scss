@@ -1,0 +1,94 @@
+ion-menu-button {
+    color: white;
+}
+
+ion-fab{
+    bottom: 14%;
+}
+
+ion-card{
+    height: 40vh;
+    box-shadow: none;
+}
+
+ion-card-title{
+    color: white;
+    font-size: 17px;
+}
+
+ion-header{
+    background-color: white;
+}
+
+.fabGrid{
+    position: relative;
+    bottom: 28px;
+    padding: 0;
+}
+
+.rowCheck{
+    position: relative;
+    bottom: 5px;
+}
+
+.fabCol{
+    padding: 0;
+}
+
+.fab-txt{
+    width: 100px;
+    height: 20px;
+    font-size: 12px;
+    padding: 0;
+    --border-radius: 20px;
+}
+
+
+.bg-card{
+    background-image: url(../../../assets/exemplo-card1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.header-tarefas{
+    background-color: var(--ion-color-primary);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.topo-card{
+    display: flex;
+}
+
+.data{
+    display: flex;
+    position: relative;
+    text-align: center;
+    color: white;
+    left: 10%;
+}
+
+.check{
+    display: flex;
+    position: relative;
+    text-align: center;
+    top: 3px;
+    left: 35%;
+}
+
+.titulo-card{
+    position: absolute;
+    top: 70%;
+    padding-left: 10px;
+    font-size: 17px;
+}
+
+.tab{
+    position: fixed;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    top: 90vh;
+    box-shadow: 0px 0px 0px 1px #8ED0A8;
+}

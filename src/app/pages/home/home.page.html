@@ -1,0 +1,107 @@
+  <!--header do app-->
+  <ion-header class="ion-no-border">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="4">
+          <ion-toolbar>
+            <ion-buttons>
+              <ion-menu-button menu="main-menu"><img src="../../../assets/menu-btn-home.svg" alt=""></ion-menu-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-col>
+        
+        <ion-col class="colHeader" size="4">
+          <ion-tab-button>
+            <img src="../../../assets/contatos2.svg">
+          </ion-tab-button>
+        </ion-col>
+        
+        <ion-col class="colHeader" size="4">
+          <ion-tab-button>
+            <img src="../../assets/fluxo.svg">
+          </ion-tab-button>
+        </ion-col>
+        
+      </ion-row>
+    </ion-grid>
+  </ion-header>
+  
+  <!--conteudo do app, que no caso vai ser a gamificação da arvore-->
+  <ion-content [fullscreen]="true">
+    
+      <div class="flex-center bgHome">
+        <div>
+          <div class="arvore">
+            <svg width="100" height="165" viewBox="0 0 310 375" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 23.2572C33.2868 46.8389 59.1673 79.0443 92.2948 102.779C125.502 126.513 171.291 141.09 208.241 123.079C230.618 112.166 259.923 116.363 278 133C265.418 80.4181 225.362 34.6281 173.601 13.4885C121.839 -7.65106 59.5658 -3.60608 0 23.2572Z" fill="url(#paint0_linear_0:1)"/>
+              <path d="M242.69 97.4587C230.973 82.5974 220.285 66.7139 205.084 55.1552C216.089 67.0285 225.272 80.6318 236.119 92.741C225.272 85.3497 213.555 78.9021 201.284 73.7125C191.467 63.4904 180.303 54.7623 167.715 48C176.582 56.4135 186.083 64.1193 195.742 71.5106C182.758 66.4782 169.141 62.7828 155.286 60.5025C146.656 54.9984 136.047 53.111 125.913 52.9538C132.089 55.3127 138.343 57.5141 144.835 59.0867C133.276 57.8287 121.638 57.5932 110 58.5368C135.097 59.4803 159.956 65.4559 183.549 74.8129C174.286 74.6557 165.024 75.2062 155.761 75.9139C166.765 79.6882 178.562 80.0813 189.725 77.3292C198.275 80.9462 206.667 85.0353 214.901 89.4386C204.134 90.3036 193.208 89.7528 182.52 88.5733C192.813 94.1561 205.875 95.9648 216.405 90.2248C238.81 102.413 259.632 117.195 278 133C268.341 119.711 256.386 107.759 242.69 97.4587Z" fill="#77B678"/>
+              <path d="M266.645 312.276C311.149 260.036 314.152 176.481 272.959 123C315.769 147.88 313.074 235.155 305.682 284.373C298.291 333.591 286.664 341.574 236.694 347C241.698 346.69 246.703 346.38 251.708 346.148C246.164 343.59 240.621 341.109 235 338.551C236.309 334.521 244.393 338.397 266.645 312.276Z" fill="#89CEBD"/>
+              <path d="M301.241 282.875C274.283 257.113 234.397 232.209 195.773 235.253C157.148 238.376 120.416 269.447 100 299.972C112.77 344.003 161.247 376.869 210.592 374.917C259.937 372.966 305.183 336.43 309.991 290.916C309.991 291.619 310.621 291.775 301.241 282.875Z" fill="black"/>
+              <defs>
+              <linearGradient id="paint0_linear_0:1" x1="278.798" y1="114.818" x2="16.4147" y2="9.63685" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#87CE87"/>
+              <stop offset="1" stop-color="#8ED2A9"/>
+              </linearGradient>
+              </defs>
+              </svg>              
+          </div>
+        </div>
+      </div>
+    
+  
+  <!--botão flutuante-->
+  <div class="btnFab">
+    <ion-fab horizontal="end">
+      <ion-fab-button>
+        <img src="../../../assets/fab.svg">
+      </ion-fab-button>
+      <ion-fab-list side="start">
+        <ion-grid class="fabGrid">
+          <ion-row>
+            <ion-col class="fabCol" size="12">
+              <ion-fab-button size="small" color="primary" class="fab-txt">
+                Criar nova tarefa?
+              </ion-fab-button>
+            </ion-col>
+          </ion-row>
+          <ion-row class="rowCheck">      
+            <ion-col class="fabCol" size="6">
+              <ion-fab-button (click)="criarTarefas()" size="small" color="primary">
+              <ion-icon name="checkmark-outline"></ion-icon>
+            </ion-fab-button>
+            </ion-col>
+            <ion-col class="fabCol" size="6">
+              <ion-fab-button size="small" color="danger">
+                <ion-icon name="close-outline"></ion-icon>
+              </ion-fab-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-fab-list>
+    </ion-fab>
+  </div>
+
+  <!--opições de navegação-->
+  <div class="tab">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="4">
+          <ion-tab-button (click)="tarefas()">
+            <img src="../../assets/tarefas.svg">
+          </ion-tab-button>
+        </ion-col>
+        <ion-col size="4">
+          <ion-tab-button (click)="home()">
+            <img src="../../assets/home.svg">
+          </ion-tab-button>
+        </ion-col>
+        <ion-col size="4">
+          <ion-tab-button (click)="logout()">
+            <img src="../../assets/account_circle_24px.svg">
+          </ion-tab-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+</ion-content>

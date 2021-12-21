@@ -1,0 +1,47 @@
+ion-content.background{
+    --background: url(../../../assets/img-telaInicial.png) no-repeat center center / cover;
+}
+
+ion-button[color="secondary"]{
+    text-transform: initial;
+    height: 27px;
+    width: 47%;
+    font-size: 13px;
+}
+
+.divBtn{
+    position: relative;
+    top: 63%;
+    font-family: 'Oswald';
+}
+
+.logo{
+    position: relative;
+    top: 18%;
+    left: 10%;
+}
+
+.texto{
+    position: absolute;
+    top: 80%;
+}
+
+.titulo{
+    color: white;
+    font-size: 22px;
+    margin: 0px;
+    font-family: 'Oswald';
+}
+
+.btnCentro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.linkInicial{
+    font-family: 'Oswald';
+    color: white;
+    font-size: 12px;
+    text-decoration: none;
+}

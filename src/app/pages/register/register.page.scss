@@ -1,0 +1,70 @@
+div[class="flex-center"]{
+    text-align: center;
+}
+
+.btnsLogin{
+    padding-top: 10px;
+}
+
+.pr{
+    padding-right: 7px;
+}
+
+.container{
+    position: relative;
+}
+
+.box{
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    box-shadow: 0px 2px 28px 2px rgba(0, 0, 0, 0.15);
+    border-radius: 60px;
+    background: white;
+    top: 80px;
+    left: 30%;
+}
+
+.boxTrocarImg{
+    position: absolute;
+    width: 24px; 
+    height: 24px;
+    left: 62%;
+    top: 115%;
+}
+
+ion-label{
+    font-size: 14px;
+    font-family: 'Roboto-regular';
+}
+
+ion-list{
+    padding-top: 13px;
+}
+
+
+ion-back-button{
+    color: white;
+}
+
+ion-input{
+    font-size: 14px;
+}
+
+ion-button[fill="outline"]{
+    text-transform: initial;
+    font-size: 8px;
+    color: black;
+}
+
+ion-button[color="primary"]{
+    text-transform: initial;
+    width: 70%;
+}
+
+ion-card{
+    position: relative;
+    box-shadow: none;
+    width: 75%;
+}
+

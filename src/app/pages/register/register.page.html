@@ -1,0 +1,94 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button title=""></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <img src="../../../assets/curvaRegister.svg" width="100%">
+    <div class="box flex-center">
+      <img src="../../../assets/perfil.png">
+    </div>
+    <div class="boxTrocarImg">
+      <img src="../../../assets/icon-trocarImg.png">
+    </div>
+  </div>
+  <div class="flex-center">
+    <ion-card>
+      <ion-card-content>
+        <form [formGroup]="form">
+        <ion-item>
+          <ion-label position="floating">Nome</ion-label>
+          <ion-input formControlName="name" id="name" type="name" ></ion-input>
+        </ion-item>
+        <ion-label color="danger" *ngIf="form.get('name').touched && form.get('name').errors?.required">Nome é obrigatório</ion-label>
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input formControlName="email" id="email" [(ngModel)]="userRegister.email" name="email" type="email"></ion-input>
+        </ion-item>
+        <ion-label color="danger" *ngIf="form.get('email').touched && form.get('email').errors?.required">Email é obrigatório</ion-label>
+        <ion-label color="danger" *ngIf="form.get('email').touched && form.get('email').errors?.email">Este email é inválido</ion-label>
+        <ion-item>
+          <ion-label position="floating">Senha</ion-label>
+          <ion-input formControlName="senha" id="senha" [(ngModel)]="userRegister.password" name="password" type="password"></ion-input>
+        </ion-item>
+        <ion-label color="danger" *ngIf="form.get('senha').touched && form.get('senha').errors?.required">Senha é obrigatório</ion-label>
+        <ion-item>
+          <ion-label position="floating">Confirmar senha</ion-label>
+          <ion-input formControlName="confirmarSenha" id="confirmarSenha" type="password"></ion-input>
+        </ion-item>
+        <ion-label color="danger" *ngIf="form.get('confirmarSenha').touched && form.get('confirmarSenha').errors?.required">A confirmação da senha é obrigatório</ion-label>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="6">
+              <ion-item>
+                <ion-label position="floating">Telefone</ion-label>
+                <ion-input formControlName="telefone" id="telefone"></ion-input>
+              </ion-item>
+              <ion-label color="danger" *ngIf="form.get('telefone').touched && form.get('telefone').errors?.required">Telefone é obrigatório</ion-label>
+              <ion-label color="danger" *ngIf="form.get('telefone').touched && form.get('telefone').errors?.minlength">Tem que ter no mínimo 9 digitos</ion-label>
+              <ion-label color="danger" *ngIf="form.get('telefone').touched && form.get('telefone').errors?.maxslength">Tem que ter no máximo 9 digitos</ion-label>
+            </ion-col>
+            <ion-col size="6">
+              <ion-list>
+                <ion-item>
+                  <ion-select formControlName="ocupacao" placeholder="Ocupação">
+                    <ion-select-option>Estudante</ion-select-option>
+                    <ion-select-option>Empregado fixo</ion-select-option>
+                    <ion-select-option>Gerente</ion-select-option>
+                    <ion-select-option>Freelancer</ion-select-option>
+                  </ion-select>
+                </ion-item>
+              </ion-list>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <div>
+          <ion-grid>
+            <ion-row>
+              <ion-col size="6">
+                <ion-button  fill="outline">
+                  <img class="pr" src="../../../assets/iconGoogle.svg">
+                  Continuar pelo <br>Google
+                </ion-button>
+              </ion-col>
+              <ion-col>
+                <ion-button fill="outline">
+                  <img class="pr" src="../../../assets/iconFacebook.svg">
+                  Continuar pelo <br>Facebook
+                </ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+        <div class="btnsLogin">
+          <ion-button [disabled]="!form.valid" (click)="register()" color="primary">Criar</ion-button>
+        </div>
+      </form>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

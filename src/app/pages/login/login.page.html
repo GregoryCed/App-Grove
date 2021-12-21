@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="primary" title=""></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="flex-center">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle><img src="../../../assets/logo.png"></ion-card-subtitle>
+        <ion-card-title color="primary">Realizar Login</ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <form action="/login" method="post" [formGroup]="form">
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input formControlName="email" type="email" name="email" id="email" [(ngModel)]="userLogin.email"></ion-input>
+        </ion-item>
+        <ion-label color="danger" *ngIf="form.get('email').touched && form.get('email').errors?.required">Email é obrigatório</ion-label>
+        <ion-label color="danger" *ngIf="form.get('email').touched && form.get('email').errors?.email">Este email é inválido</ion-label>
+        <ion-item>
+          <ion-label position="floating">Senha</ion-label>
+          <ion-input formControlName="senha" type="password" name="senha" id="senha" [(ngModel)]="userLogin.password"></ion-input>
+        </ion-item>
+        <ion-label color="danger" *ngIf="form.get('senha').touched && form.get('senha').errors?.required">Senha é obrigatório</ion-label>
+        <div class="btnsLogin">
+          <ion-grid>
+            <ion-row>
+              <ion-col size="6">
+                <ion-button  fill="outline">
+                  <img class="pr" src="../../../assets/iconGoogle.svg">
+                  Continuar <br> pelo Google
+                </ion-button>
+              </ion-col>
+              <ion-col size="6">
+                <ion-button fill="outline">
+                  <img class="pr" src="../../../assets/iconFacebook.svg">
+                  Continuar <br> pelo Facebook
+                </ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+        <div class="btnsLogin">
+          <ion-button (click)="login()" color="primary">Entrar</ion-button>
+        </div>
+      </form>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
